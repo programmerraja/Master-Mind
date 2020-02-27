@@ -15,33 +15,33 @@ class master:
     if levels==0:
       root.destroy()
       self.root=t.Tk()
-      self.root.geometry("550x580+20+20")
+      self.root.geometry("450x580+200+20")
       self.root.title("MASTER MIND")
       self.root.wm_resizable(0,0)
       self.root2=t.Frame(self.root,height=500,width=500,bg=self.color)
       self.root2.grid(row=0,column=2,padx=1,pady=1)
-      self.intro=t.Label(self.root2,text="You Are At Level "+str(levels+1),font=("arieal",30,"italic"),bg="#00ff00").grid()
+      self.intro=t.Label(self.root2,text=" Level "+str(levels+1),font=("arieal",30,"italic"),bg="#00ff00",fg="red").grid()
       self.li=[1,1,2,2,3,3,4,4,5,5,6,6]
       self.moves=20
       self.how_many=0
       self.last=0
     elif levels==1:
-      self.root.geometry("550x580+20+20")
+      self.root.geometry("550x580+200+20")
       self.root.title("MASTER MIND")
       self.root2=t.Frame(self.root,height=500,width=500,bg=self.color)
       self.root2.grid(row=0,column=2)
-      self.intro=t.Label(self.root2,text="You Are At Level "+str(levels+1),font=("arieal",30,"italic"),bg="#00ff00").grid()
+      self.intro=t.Label(self.root2,text=" Level "+str(levels+1),font=("arieal",30,"italic"),bg="#00ff00",fg="red").grid()
       self.li=[11,11,24,24,36,36,47,47,59,59,63,63,77,77,89,89]
       self.moves=20
 
       self.how_many=0
       self.last=0
     elif levels==2:
-      self.root.geometry("530x680+20+20")
+      self.root.geometry("530x680+200+20")
       self.root.title("MASTER MIND")
       self.root2=t.Frame(self.root,height=500,width=500,bg=self.color)
       self.root2.grid(row=0,column=2)
-      self.intro=t.Label(self.root2,text="You Are At Level "+str(levels+1),font=("arieal",30,"italic"),bg="#00ff00").grid()
+      self.intro=t.Label(self.root2,text=" Level "+str(levels+1),font=("arieal",30,"italic"),bg="#00ff00",fg="red").grid()
       self.li=[11,11,24,24,36,36,47,47,59,59,63,63,77,77,89,89,99,99,28,28]
       self.moves=30
       self.how_many=0
@@ -122,7 +122,7 @@ class master:
     self.happen=t.Label(self.root2,text="You Click a Number  ",font=("arieal",20,"italic"),bg=self.color)
     self.happen.grid(row=9,column=0)
     
-    self.pair=t.Label(self.root2,text="pair finds : 0",font=("arieal",20,"italic"),bg=self.color)
+    self.pair=t.Label(self.root2,text="Pair finds : 0",font=("arieal",20,"italic"),bg=self.color)
     self.pair.grid(row=10,column=0)
 
     self.move=t.Label(self.root2,text="Moves Left "+str(self.moves),font=("arieal",20,"italic"),bg=self.color)
@@ -131,7 +131,7 @@ class master:
     self.fran=t.Frame(self.root,height=20,width=14,bg=self.color).grid()
 
     if levels==0:
-       self.back=t.Button(self.root,text="<-Back",height=1,width=6,font=("arieal",8,"italic"),bg=self.color2,relief="groove",command=lambda:introduc(self.root))
+       self.back=t.Button(self.root,text="Back",height=1,width=10,font=("arieal",10,"bold"),bg=self.color2,fg="purple",relief="groove",command=lambda:introduc(self.root))
        self.back.grid(row=15,column=2)
 
     root.mainloop()
@@ -191,7 +191,7 @@ class master:
       self.last=now
       self.moves-=1
       self.move["text"]="Moves Left "+str(self.moves)
-      self.pair["text"]="pair finds: "+str(self.how_many)
+      self.pair["text"]="Pair finds: "+str(self.how_many)
       self.won_check(levels)
 
 def introduc(roo):
@@ -200,7 +200,7 @@ def introduc(roo):
   root=t.Tk()
   root.title("MASTER MIND")
   root.wm_resizable(0,0)
-  root.geometry("560x500+20+20")
+  root.geometry("560x500+200+20")
   color="#00ffcc"
   color2="#ff9900"
   root.configure(bg=color)
