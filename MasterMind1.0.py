@@ -37,7 +37,7 @@ class master:
       self.how_many=0
       self.last=0
     elif levels==2:
-      self.root.geometry("530x680+200+20")
+      self.root.geometry("550x680+200+20")
       self.root.title("MASTER MIND")
       self.root2=t.Frame(self.root,height=500,width=500,bg=self.color)
       self.root2.grid(row=0,column=2)
@@ -46,6 +46,7 @@ class master:
       self.moves=30
       self.how_many=0
       self.last=0  
+
       
     r.shuffle(self.li)  
     
@@ -119,7 +120,7 @@ class master:
         self.button20_2=t.Button(self.root1,height=5,width=14,font=("arieal",10,"italic"),bg=self.color2,relief=relif,command=lambda:self.check( self.li[19],self.button20_2,levels))
         self.button20_2.grid(row=9,column=3)
         
-    self.happen=t.Label(self.root2,text="You Click a Number  ",font=("arieal",20,"italic"),bg=self.color)
+    self.happen=t.Label(self.root2,text="You Click a Number :",font=("arieal",20,"italic"),bg=self.color)
     self.happen.grid(row=9,column=0)
     
     self.pair=t.Label(self.root2,text="Pair finds : 0",font=("arieal",20,"italic"),bg=self.color)
@@ -142,11 +143,13 @@ class master:
         m.showinfo("Result","You Won in level 1")
         self.moves=20
         self.how_many=0
+        self.happen["text"]="You Click a Number :"
         master(1,self.root)
        elif self.moves==1:
         m.showinfo("Result","You loose level 1")
         self.moves=20
         self.how_many=0
+        self.happen["text"]="You Click a Number :"
         master(0,self.root)
       elif levels==1:
         if self.how_many==8:
@@ -154,12 +157,13 @@ class master:
          
          self.moves=20
          self.how_many=0
-        
+         self.happen["text"]="You Click a Number :"
          master(2,self.root)
         elif self.moves==1:
           m.showinfo("Result","You loose level 2")
           self.moves=20
           self.how_many=0
+          self.happen["text"]="You Click a Number :"
           master(1,self.root)
       elif levels==2:
         if self.how_many==10:
@@ -170,11 +174,12 @@ class master:
           m.showinfo("Result","You loose level 3")
           self.moves=30
           self.how_many=0
+          self.happen["text"]="You Click a Number :"
           master(2,self.root)
         
   def check(self,now,button_now,levels):
       global button_last,i
-      self.happen["text"]="You Click a Number "+str(now)
+      self.happen["text"]="You Click a Number :"+str(now)
       self.colors=["red","blue","yellow","white","pink","black"]
       self.won_check(levels)
       if self.last==now:
