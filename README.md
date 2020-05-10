@@ -1,5 +1,12 @@
 # Master-Mind
 A Simple brain game 
+
+
+
+
+
+
+
 ![begin](image/begin.png)
 
 ![level1](image/level1.png)
