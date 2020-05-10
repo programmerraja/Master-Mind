@@ -7,7 +7,6 @@ i=0
 class master:
   
   def __init__(self,levels=0,root=1):
-    
     self.color="#00ff00"
     self.color2="#ff9900"
     self.root=root
@@ -15,11 +14,11 @@ class master:
     if levels==0:
       root.destroy()
       self.root=t.Tk()
-      self.root.geometry("450x580+200+20")
+      self.root.geometry("560x580+200+20")
       self.root.title("MASTER MIND")
       self.root.wm_resizable(0,0)
       self.root2=t.Frame(self.root,height=500,width=500,bg=self.color)
-      self.root2.grid(row=0,column=2,padx=1,pady=1)
+      self.root2.grid(row=0,column=3,padx=1,pady=1)
       self.intro=t.Label(self.root2,text=" Level "+str(levels+1),font=("arieal",30,"italic"),bg="#00ff00",fg="red").grid()
       self.li=[1,1,2,2,3,3,4,4,5,5,6,6]
       self.moves=20
@@ -29,7 +28,7 @@ class master:
       self.root.geometry("550x580+200+20")
       self.root.title("MASTER MIND")
       self.root2=t.Frame(self.root,height=500,width=500,bg=self.color)
-      self.root2.grid(row=0,column=2)
+      self.root2.grid(row=0,column=3)
       self.intro=t.Label(self.root2,text=" Level "+str(levels+1),font=("arieal",30,"italic"),bg="#00ff00",fg="red").grid()
       self.li=[11,11,24,24,36,36,47,47,59,59,63,63,77,77,89,89]
       self.moves=20
@@ -40,7 +39,7 @@ class master:
       self.root.geometry("550x680+200+20")
       self.root.title("MASTER MIND")
       self.root2=t.Frame(self.root,height=500,width=500,bg=self.color)
-      self.root2.grid(row=0,column=2)
+      self.root2.grid(row=0,column=3)
       self.intro=t.Label(self.root2,text=" Level "+str(levels+1),font=("arieal",30,"italic"),bg="#00ff00",fg="red").grid()
       self.li=[11,11,24,24,36,36,47,47,59,59,63,63,77,77,89,89,99,99,28,28]
       self.moves=30
@@ -55,7 +54,7 @@ class master:
  
 
     self.root1=t.Frame(self.root,height=500,width=500)
-    self.root1.grid(row=11,column=2)
+    self.root1.grid(row=11,column=3)
 
     self.button1=t.Button(self.root1,height=5,width=14,font=("arieal",10,"italic"),bg=self.color2,relief=relif,command=lambda:self.check( self.li[0],self.button1,levels))
     self.button1.grid(row=5,column=0)
@@ -133,7 +132,7 @@ class master:
 
     if levels==0:
        self.back=t.Button(self.root,text="Back",height=1,width=10,font=("arieal",10,"bold"),bg=self.color2,fg="purple",relief="groove",command=lambda:introduc(self.root))
-       self.back.grid(row=15,column=2)
+       self.back.grid(row=15,column=3)
 
     root.mainloop()
   def won_check(self,levels):
@@ -154,7 +153,6 @@ class master:
       elif levels==1:
         if self.how_many==8:
          m.showinfo("Result","You Won in level 2")
-         
          self.moves=20
          self.how_many=0
          self.happen["text"]="You Click a Number :"
